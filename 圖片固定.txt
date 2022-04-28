@@ -1,0 +1,49 @@
+固定圖框比例
+html:
+
+<div class="outter">
+	<div class="fm-image-container ratio-1-1">
+		<div class="image"></div>
+        </div>
+        <div class="fm-image-container ratio-2-3">
+                 <div class="image"></div>
+        </div>
+       	<div class="fm-image-container ratio-16-9">
+                  <div class="image"></div>
+	</div>
+</div>
+
+css:
+
+.outter{
+    width: 50%;
+}
+.fm-image-container{
+    width: 100%;
+}
+.fm-image-container::before{
+    content: '';
+    display: block;
+    width: 100%;
+    padding-top: 75%;
+}
+.fm-image-container .image{
+    background-color: red;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.fm-image-container.ratio-1-1::before{
+    padding-top: 100%;
+}
+.fm-image-container.ratio-2-3::before{
+    padding-top: 150%;
+}
+.fm-image-container.ratio-16-9::before{
+    padding-top: 56.25%;
+}
