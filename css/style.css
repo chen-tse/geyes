@@ -81,6 +81,12 @@ img{
     right: 24px;
     top: 24px;
 }
+.header .container .hamburger{
+    display: none;
+}
+.header .container .hamburger .hamburger-line{
+    display: none;
+}
 .button .button-item{
     text-align: center;
     margin: 10px 0px;
@@ -94,19 +100,6 @@ img{
 }
 .navbar .container{
     background-color: blue;
-}
-
-.navbar .container .searchbar{
-    position: absolute;
-    top: 50%;
-    left: 10%;
-    background-color: black;
-    transform: translate(0%,-50%);
-    z-index: 2;
-}
-.navbar .container .input-search{
-    width: 100%;
-    height: 40px;
 }
 .navbar .nav{
     display: flex;
@@ -130,6 +123,20 @@ img{
 .navbar .container .shoppingcar{
     display: none;
 }
+
+.navbar .main-container .search{
+    width: 22%;
+    background-color: blue;
+    position: absolute;
+    transform: translate(0%,-100%);
+}
+.navbar .main-container .search .input-search{
+    width: 100%;
+    height: 45px;
+}
+/* .navbar .searchbar{
+    display: none;
+} */
 
 aside{
     width: 22%;
@@ -230,10 +237,54 @@ article .product .product-item p{
 }
 
 @media screen and (max-width: 992px){
-    
+    .navbar .main-container .search{
+        display: none;
+    }
+    .navbar .searchbar{
+        width: 100%;
+        background-color: black;
+    }
+    .navbar .searchbar .input-search{
+        width: 100%;
+    }
+    .header .container .button{
+        width: 110px;
+        position: absolute;
+        z-index: 1;
+        right: 24px;
+        top: 10px;
+    }
+    .button .button-link{
+        padding: 10px 5px;
+    }
 }
 
 @media screen and (max-width: 768px){
+    
+    .header .container .hamburger{
+        background-color: white;
+        width: 50px;
+        height: 40px;
+        position: absolute;
+        top: 20px;
+        right: 10px;
+        border: 1px solid black;
+        border-radius: 3px;
+        display: block;
+    }
+    .header .container .hamburger .hamburger-line{
+        width: 40px;
+        height: 3px;
+        background-color: black;
+        margin: auto;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        box-shadow: 0px 10px 0px black, 0px -10px 0px black;
+        display: block;
+    }
     .navbar .container .product-menu{
         display: block;
         color: orangered;
@@ -260,9 +311,6 @@ article .product .product-item p{
     }
     .navbar .container{
         height: 60px;
-    }
-    .navbar .container .searchbar{
-        display: none;
     }
     .header .container .button .button-item{
         display: none;
@@ -316,7 +364,7 @@ article .product .product-item p{
         background-color: gray;
     }
     .main-container{
-        width: 100%;
+        width: 95%;
         height: 100%;
         display: block;
         margin: 0 auto;
