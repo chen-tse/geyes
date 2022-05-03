@@ -168,7 +168,7 @@ article .breadcrumb{
 }
 article .product{
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     flex-wrap: wrap;
 }
 article .product .product-item{
@@ -213,7 +213,7 @@ article .product .product-item p{
 .customer-list .customer-item{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    /* justify-content: space-between; */
 }
 
 .customer-list .customer-item .outter-client{
@@ -364,8 +364,9 @@ article .product .product-item p{
         background-color: gray;
     }
     .main-container{
-        width: 95%;
+        width: 100%;
         height: 100%;
+        padding: 0 5px;
         display: block;
         margin: 0 auto;
     }
