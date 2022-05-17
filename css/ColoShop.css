@@ -217,3 +217,13 @@ img{
 .best_sellers{
     margin-top: 30px;
 }
+.best_sellers .product img{
+    width: 100%;
+}
+.best_sellers .product .product_info{
+    margin: 25px;
+    text-align: center;
+}
+.best_sellers .product .product_info .product_price{
+    color:#fe4c50;
+}
