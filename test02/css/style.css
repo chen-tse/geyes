@@ -202,9 +202,10 @@ section{
     border-radius: 100px;
     position: fixed;
     bottom: 100px;
-    right: 50px;
+    right: 30px;
     z-index: 10;
     text-align: center;
+    opacity: 0.8;
 }
 .go_top:hover{
     background-color: #FBB03B;
@@ -220,10 +221,11 @@ section{
     border-radius: 100px;
     position: fixed;
     bottom: 170px;
-    right: 50px;
+    right: 30px;
     z-index: 10;
     text-align: center;
     border: 1px solid #736357;
+    opacity: 0.8;
 }
 .shopping_car a{
     color: #736357;
@@ -332,7 +334,7 @@ section{
 .sm_user_shop{
     display: none;
 }
-@media screen and (max-width: 576px){
+@media screen and (max-width: 768px){
     .top-logo{
         text-align: start;
         padding: 0;
@@ -353,7 +355,7 @@ section{
 .nav{
     border-top: 1px solid #736357;
 }
-@media screen and (max-width: 576px){
+@media screen and (max-width: 768px){
     .nav .nav-right{
         display: none;
     }
@@ -441,7 +443,6 @@ section{
     border-style: solid; 
     border-width: 10px 10px 0 10px;
 }
-
 /* carsoul */
 .main-slider-item,
 .main_back{
@@ -457,6 +458,13 @@ section{
 }
 .main_back{
     height: 400px;
+}
+@media screen and (max-width:900px){
+    .main_back{
+        padding-top: 0;
+        height:auto;
+        min-height:200px;
+    }
 }
 .main-slider-item::before,
 .main_back::before{
@@ -609,6 +617,14 @@ section{
 .owl-theme .owl-nav button.owl-next{
     right: 35%;
 }
+@media screen and (max-width: 576px){
+    .owl-theme .owl-nav button.owl-prev{
+        left: 15%;
+    }
+    .owl-theme .owl-nav button.owl-next{
+        right: 15%;
+    }
+}
 .owl-theme .owl-nav button.owl-prev::after{
     font-family: "Font Awesome 5 Free"; 
     font-weight: 900; 
@@ -675,10 +691,18 @@ section{
     border-radius: 10px;
 }
 .show_picture{
-    margin-top: 15px;
+    margin: 15px 0;
 }
 .mall_buy_item{
     margin-top: 200px;
+}
+@media screen and (max-width: 576px){
+    .mall_buy_item{
+        margin-top: 20px;
+    }
+    .mall_buy_item .squarebtn{
+        padding: 0 16px;
+    }
 }
 .mall_buy_item .product_price{
     color: #C97CA1;
@@ -746,6 +770,9 @@ section{
     background-color: #EFEFEF;
     border-radius: 5px;
     border: 1px solid #736357;
+}
+.member_card{
+    margin-top: 10px;
 }
 .member_card_title{
     color: #736357;
@@ -894,6 +921,14 @@ section{
     padding: 15px 20px;
 }
 /* footer */
+.bottom-logo{
+    width: 150px;
+    height: 150px;
+    background-image: url('../test_img/logo1.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left;
+}
 .footer{
     background-color: #ECEAEA;
 }
@@ -914,6 +949,11 @@ section{
 }
 .footer_link li{
     padding: 0 10px;
+}
+@media screen and (max-width: 576px){
+    .footer_link li{
+        padding: 0 5px;
+    }
 }
 .footer_link li::before,
 .footer_link li:last-child::after{
