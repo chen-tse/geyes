@@ -230,7 +230,18 @@ section{
 .shopping_car a{
     color: #736357;
 }
-
+@media screen and (max-width: 768px){
+    .go_top.active{
+        bottom: 50px;
+        width: 35px;
+        height: 35px;
+    }
+    .shopping_car{
+        bottom: 100px;
+        width: 35px;
+        height: 35px;
+    }
+}
 /* commom */
 .homebtn{
 	/* structure */
@@ -355,6 +366,7 @@ section{
 .nav{
     border-top: 1px solid #736357;
 }
+
 @media screen and (max-width: 768px){
     .nav .nav-right{
         display: none;
@@ -395,6 +407,14 @@ section{
 .nav-left li,
 .nav-right li{
     margin: 0 15px;
+}
+@media screen and (min-width:768px){
+    .nav-left li{
+        margin: 0 9px;
+    }
+    .nav-right li{
+        margin: 0 6px;
+    }
 }
 .nav-left a,
 .nav-right a{
@@ -617,6 +637,14 @@ section{
 .owl-theme .owl-nav button.owl-next{
     right: 35%;
 }
+@media screen and (max-width: 768px){
+    .owl-theme .owl-nav button.owl-prev{
+        left: 15%;
+    }
+    .owl-theme .owl-nav button.owl-next{
+        right: 15%;
+    }
+}
 @media screen and (max-width: 576px){
     .owl-theme .owl-nav button.owl-prev{
         left: 15%;
@@ -693,13 +721,13 @@ section{
 .show_picture{
     margin: 15px 0;
 }
-.mall_buy_item{
-    margin-top: 200px;
-}
-@media screen and (max-width: 576px){
-    .mall_buy_item{
-        margin-top: 20px;
+@media screen and (min-width: 1200px){
+    .mall_short{
+        margin-bottom: 100px;
     }
+}
+
+@media screen and (max-width: 576px){
     .mall_buy_item .squarebtn{
         padding: 0 16px;
     }
@@ -873,7 +901,18 @@ section{
     margin-top: 20px;
     padding: 0 100px;
 }
-
+@media screen and (max-width: 992px){
+    .center_btn{
+        margin: 0 5px;
+    }
+    .center_btn .squarebtn{
+        padding: 0 16px;
+        min-width: 100px;
+    }
+}
+.center_btn{
+    margin-bottom: 10px;
+}
 /* member center orderdetail */
 .member_center_orderdetail .image{
     border-radius: 5px;
@@ -919,6 +958,9 @@ section{
     border: 1px solid #736357;
     background-color: #FFFFFF;
     padding: 15px 20px;
+}
+.pay_price .squarebtn{
+    padding: 0 20px;
 }
 /* footer */
 .bottom-logo{
