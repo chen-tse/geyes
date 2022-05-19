@@ -85,18 +85,19 @@
                             <p class="member_card_title text-center">會員登入</p>
                             <div class="member_card_input">
                                 <button class="homebtn linebtn"><i class="fa-brands fa-line"></i> 快速登入</button>
-                                <div class="input_info">
-                                    <p>Email</p>
-                                    <input class="user_input" type="text">
-                                </div>
-                                <div class="input_info">
-                                    <p>密碼</p>
-                                    <input class="user_input" type="text">
-                                </div>
-                                <div>
-                                    <a href="">忘記密碼</a>
-                                </div>
-                                <button class="homebtn">會員登入</button>
+                                <form class="row g-3 ">
+                                    <div class="col-12">
+                                        <label for="contact_Email" class="form-label">E-mail</label>
+                                        <input type="email" class="form-control" id="contact_Email" required>
+                                    </div>
+                                    <div class="col-12">
+                                      <label for="contact_PWD" class="form-label">密碼</label>
+                                      <input type="password" class="form-control" id="contact_PWD" required>
+                                    </div>
+                                    <div class="col-12">
+                                        <button class="homebtn">會員登入</button>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -106,22 +107,41 @@
                             <div class="member_card_input">
                                 <button class="homebtn linebtn"><i class="fa-brands fa-line"></i> 快速註冊</button>
                                 <p class="member_card_title text-center" style="margin-top: 10px;">帳號註冊</p>
-                                <div class="input_info">
-                                    <p>Email(註冊帳號) *</p>
-                                    <div class="row">
-                                        <div class="col-9">
-                                            <input class="user_input" type="text" >
-                                        </div>
-                                        <div class="col-3">
-                                            <button class="homebtn checkbtn">認證</button>
+                                <form class="row g-3 ">
+                                    <div class="input_info">
+                                        <div class="row">
+                                            <div class="col-9">
+                                                <label for="contact_Email" class="form-label">E-mail</label>
+                                                <input type="email" class="form-control" id="contact_Email" required>
+                                            </div>
+                                            <div class="col-3">
+                                                <button class="homebtn checkbtn">認證</button>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="input_info">
-                                    <p style="display: inline;">驗證碼:</p>
-                                    <input class="user_input" type="text" style="width: 50%;">
-                                </div>
-                                <div class="input_info">
+                                    <div class="input_info">
+                                        <p style="display: inline;">驗證碼:</p>
+                                        <input class="user_input" type="text" style="width: 50%;" required>
+                                    </div>
+                                    <div class="input_info">
+                                        <label for="member_Name" class="form-label">姓名 *</label>
+                                        <input type="text" class="form-control" id="member_Name" required>
+                                    </div>
+                                    <div class="col-12">
+                                      <label for="member_PWD" class="form-label">密碼</label>
+                                      <input type="password" class="form-control" id="member_PWD" required>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="check_PWD" class="form-label">確認密碼</label>
+                                        <input type="password" class="form-control" id="check_PWD" required>
+                                      </div>
+                                    <div class="col-12">
+                                        <button class="homebtn addbtn">加入會員</button>
+                                    </div>
+                                </form>
+                                
+                                
+                                <!-- <div class="input_info">
                                     <p>姓名 *</p>
                                     <input class="user_input" type="text">
                                 </div>
@@ -132,8 +152,8 @@
                                 <div class="input_info">
                                     <p>確認密碼 *</p>
                                     <input class="user_input" type="text">
-                                </div>
-                                <button class="homebtn addbtn">加入會員</button>
+                                </div> -->
+                                
                             </div>
                         </div>
                     </div>

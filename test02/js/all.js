@@ -80,6 +80,19 @@ $(document).ready(function(){
         this.setCustomValidity("");
     })
 
+    // member
+    $('#contact_PWD').on('invalid',function(){
+        if (!this.validity.valid) this.setCustomValidity("請輸入密碼!");
+    })
+    $('#contact_PWD').on('input' ,function(){
+        this.setCustomValidity("");
+    })
+    $('#member_Name').on('invalid',function(){
+        if (!this.validity.valid) this.setCustomValidity("請輸入會員姓名!");
+    })
+    $('#member_Name').on('input' ,function(){
+        this.setCustomValidity("");
+    })
 
     // shopping car
     $('.input_name').on('invalid',function(){

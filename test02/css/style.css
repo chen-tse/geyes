@@ -823,7 +823,6 @@ section{
     background-color: #C7B299;
 }
 .member_card_input .homebtn{
-    margin: 10px 0;
     width: 100%;
     height: 48px;
     line-height: 48px;
@@ -834,6 +833,7 @@ section{
     line-height: 40px;
     margin: 0;
     padding: 0 10px;
+    margin-top: 32px;
 }
 .homebtn.addbtn{
     color: #40414f;
