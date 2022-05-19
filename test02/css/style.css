@@ -775,9 +775,10 @@ section{
     margin-top: 50px;
 }
 .contact_us_page .squarebtn{
+    margin-top: 15px;
     width: 100%;
 }
-.input_info{
+/* .input_info{
     margin-bottom: 20px;
 }
 .input_info p{
@@ -789,7 +790,7 @@ section{
     height: 40px;
     border: 1px solid #40414f;
     border-radius: 5px;
-}
+} */
 
 /* member page */
 .member_page .member_card{

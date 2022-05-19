@@ -31,11 +31,12 @@ $(document).ready(function(){
     })
 
     //owl-carousel initilization
+    //  home slider
     $('._carsoul .owl-carousel').owlCarousel({
         loop: true,
         items: 1
     })
-
+    // home news
     $('.news .owl-carousel').owlCarousel({
         loop: true,
         nav: true,
@@ -54,4 +55,28 @@ $(document).ready(function(){
             }
         }
     })
+
+    // contact us page
+    document.querySelector("#contact_Name").oninvalid = function () {
+        if (!this.validity.valid) this.setCustomValidity("請輸入聯絡人名字!");
+    }
+    document.querySelector("#contact_Name").oninput = function () {
+        this.setCustomValidity("");
+    }
+    document.querySelector("#contact_Phone").oninput = function () {
+        this.setCustomValidity("");
+        let mystr = new RegExp('09[0-9]{8}');
+        if (!mystr.test(this.value)) this.setCustomValidity("格式錯誤!例如:09xxxxxxxx");
+    }    
+    document.querySelector("#contact_Email").oninput = function () {
+        this.setCustomValidity("");
+        let mystr = new RegExp('[^@\s]+@[^@\s]+\.[^@\s]+');
+        if (!mystr.test(this.value)) this.setCustomValidity("E-mail格式錯誤!");
+    }
+    document.querySelector("#contact_Info").oninvalid = function () {
+        if (!this.validity.valid) this.setCustomValidity("請輸入聯絡內容!");
+    }
+    document.querySelector("#contact_Info").oninput = function () {
+        this.setCustomValidity("");
+    }
 })

@@ -82,34 +82,35 @@
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-md-6">
-                        <div class="input_box">
-                            <div class="input_info">
-                                <p>姓名 *</p>
-                                <input class="user_input" type="text">
+                        <form class="row g-3 ">
+                            <div class="col-12">
+                              <label for="contact_Name" class="form-label">姓名 *</label>
+                              <input type="text" class="form-control" id="contact_Name" required>
                             </div>
-                            <div class="input_info">
-                                <p>聯絡電話 *</p>
-                                <input class="user_input" type="text">
+                            <div class="col-12">
+                              <label for="contact_Phone" class="form-label">聯絡電話 *</label>
+                              <input type="text" class="form-control" id="contact_Phone" required>
                             </div>
-                            <div class="input_info">
-                                <p>E-mail</p>
-                                <input class="user_input" type="text">
+                            <div class="col-12">
+                                <label for="contact_Email" class="form-label">E-mail</label>
+                                <input type="email" class="form-control" id="contact_Email">
                             </div>
-                            <div class="input_info">
-                                <p>聯絡內容 *</p>
-                                <textarea name="" id="" rows="10" style="width: 100%; border-radius: 5px;"></textarea>
+                            <div class="col-12">
+                                <label for="contact_Info" class="form-label">聯絡內容 *</label>
+                                <textarea class="form-control" id="contact_Info" rows="10" style="width: 100%; border-radius: 5px;" required></textarea>
                             </div>
-                        </div>
+                            <div class="container">
+                                <div class="row justify-content-center">
+                                    <div class="col-6">
+                                       <button id="contact_submit" class="squarebtn">確認送出</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-md-3">
-                       <a href="" class="squarebtn">確認送出</a> 
-                    </div>
-                </div>
-            </div>
+            
         </section>
     </div>
     <!-- End main -->
