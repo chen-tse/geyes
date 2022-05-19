@@ -753,6 +753,10 @@ section{
     background-color: #fff;
     color: #736357;
     border:  1px solid #736357;
+    transition: all 0.3s;
+}
+.plus_minus_btn:hover{
+    background-color: #F5C772;
 }
 .mall_buy_item .squarebtn{
     width: 100%;
@@ -778,7 +782,7 @@ section{
     margin-top: 15px;
     width: 100%;
 }
-/* .input_info{
+.input_info{
     margin-bottom: 20px;
 }
 .input_info p{
@@ -790,7 +794,7 @@ section{
     height: 40px;
     border: 1px solid #40414f;
     border-radius: 5px;
-} */
+}
 
 /* member page */
 .member_page .member_card{

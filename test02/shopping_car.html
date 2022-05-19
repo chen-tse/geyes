@@ -104,19 +104,19 @@
                                     </div>
                                 </td>
                                 <td>紅豆粉</td>
-                                <td><p class="product_count">$170/盒</p>
-                                    <button class="plus_minus_btn"><i class="fa-solid fa-minus"></i></button>
-                                    <input class="count_input" type="text">
-                                    <button class="plus_minus_btn"><i class="fa-solid fa-plus"></i></button></td>
-                                <td>$170</td>
+                                <td><p>$<span class="product_count">170</span>/盒</p>
+                                    <button class="plus_minus_btn decrease" disabled="disabled"><i class="fa-solid fa-minus"></i></button>
+                                    <input class="count_input piece text-center" type="text" value="1" onkeyup="value=value.replace(/^(0+)|[^\d]+/g,'')">
+                                    <button class="plus_minus_btn increase"><i class="fa-solid fa-plus"></i></button></td>
+                                <td><p>$<span class="small_price">170</span></p></td>
                                 <td><a href=""><i class="fa-solid fa-trash-can"></i></a></td>
                             </tr>
                         </tbody>
                     </table>
                     <div class="price_detail text-end">
-                        <p>共1件<span>$170</span></p>
-                        <p>運送<span>$80</span></p>
-                        <p>總計<span>$250</span></p>
+                        <p id="totalCount" style="display: inline;">共1件</p><span id="totalPrice">$170</span>
+                        <p>運送<span id="freight">$80</span></p>
+                        <p>總計<span id="total">$250</span></p>
                     </div>
                 </div>
             </div>
@@ -124,48 +124,54 @@
 
         <section class="member_profile member_orderinfo">
             <div class="container">
-                <div class="row">
+                <div class="row justify-content-center">
                     <p class="member_page_title text-center">會員資料(訂購人)</p>
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-md-9">
-                                <div class="input_box">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="input_info inside_input">
-                                                <p class="input_title">姓名</p>
-                                                <input class="user_input" type="text">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="input_info inside_input">
-                                                <p class="input_title">手機</p>
-                                                <input class="user_input" type="text">
-                                            </div>
-                                        </div>
+                    <div class="col-md-9">
+                        <form class="row g-3 was-validated mt-4 " novalidate>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="input-group was-validation mt-3">
+                                        <span class="input-group-text" id="inputGroupPrepend3">姓名</span>
+                                        <input class="input_name form-control" type="text" required>
+                                        
                                     </div>
-                                    <div class="input_info d-md-flex">
-                                        <div class="address">
-                                            <p>地址</p>
-                                            <select id="city3" placeholder="請選擇縣市"></select>
-                                            <select id="dist3" placeholder="請選擇鄉鎮區"></select>
-                                        </div>
-                                        <div>
-                                            <p>郵遞區號</p>
-                                            <input class="js-demeter-tw-zipcode-selector" data-city="#city3" data-dist="#dist3" placeholder="請輸入郵遞區號" value="220" style="height: 40px; border-radius: 5px; border: 1px solid" readonly="readonly">
-                                        </div>
-                                    </div>
-                                    <div class="input_info">
-                                        <p>請填寫詳細收件人地址：路/項/弄/號/樓</p>
-                                        <input class="user_input" type="text">
-                                    </div>
-                                    <div class="input_info inside_input">
-                                        <p class="input_title">Email</p>
-                                        <input class="user_input" type="text">
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="input-group was-validation mt-3">
+                                        <span class="input-group-text" id="inputGroupPrepend3">手機</span>
+                                        <input class="input_phone form-control" type="text" required>
+                                        <p class="invalid-feedback">
+                                            輸入手機號碼，格式:09xxxxxxxx
+                                        </p>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                            <div class="input_info d-md-flex">
+                                <div class="address">
+                                    <p>地址</p>
+                                    <select id="city3" placeholder="請選擇縣市"></select>
+                                    <select id="dist3" placeholder="請選擇鄉鎮區"></select>
+                                </div>
+                                <div>
+                                    <p>郵遞區號</p>
+                                    <input class="js-demeter-tw-zipcode-selector" data-city="#city3" data-dist="#dist3" placeholder="請輸入郵遞區號" value="220" style="height: 40px; border-radius: 5px; border: 1px solid" readonly="readonly">
+                                </div>
+                            </div>
+                            <div class="input_info">
+                                <p>請填寫詳細收件人地址：路/項/弄/號/樓</p>
+                                <input class="user_input form-control" type="text" required>
+                                <span class="invalid-feedback">
+                                    輸入地址
+                                </span>
+                            </div>
+                            <div class="input-group was-validation">
+                                <span class="input-group-text" id="inputGroupPrepend3">Email</span>
+                                <input class="input_email form-control" type="text" required>
+                                <p class="invalid-feedback">
+                                    格式包含@
+                                </p>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -173,63 +179,66 @@
 
         <section class="member_profile member_receiveinfo">
             <div class="container">
-                <div class="row">
+                <div class="row justify-content-center">
                     <p class="member_page_title text-center">收件人資料</p>
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-md-9">
-                                <div class="input_box">
-                                    <div class="home_delivery">
-                                        <input type="checkbox" id="cbox1" value="first_checkbox">
-                                            <label for="cbox1">宅配</label>
+                    <div class="col-md-9">
+                        <div class="home_delivery mt-5">
+                            <input type="checkbox" id="cbox1" value="first_checkbox">
+                            <label for="cbox1">宅配</label>
+                        </div>
+                        <div class="input_info">
+                            <p class="p_color_style">
+                                <input type="checkbox" id="cbox1" value="first_checkbox">
+                                <label for="cbox1">同會員資料(訂購人)</label>
+                            </p>
+                            <p class="p_color_style">
+                                <input type="checkbox" id="cbox2" value="first_checkbox">
+                                <label for="cbox2">其他收件人資料</label>
+                            </p>
+                        </div>
+                        <form class="row g-3 was-validated mt-3 " novalidate>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="input-group was-validation mt-3">
+                                        <span class="input-group-text" id="inputGroupPrepend3">姓名</span>
+                                        <input class="input_name form-control" type="text" required>
+                                        
                                     </div>
-                                    <div class="input_info">
-                                        <p class="p_color_style">
-                                            <input type="checkbox" id="cbox1" value="first_checkbox">
-                                            <label for="cbox1">同會員資料(訂購人)</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="input-group was-validation mt-3">
+                                        <span class="input-group-text" id="inputGroupPrepend3">手機</span>
+                                        <input class="input_phone form-control" type="text" required>
+                                        <p class="invalid-feedback">
+                                            輸入手機號碼，格式:09xxxxxxxx
                                         </p>
-                                        <p class="p_color_style">
-                                            <input type="checkbox" id="cbox2" value="first_checkbox">
-                                            <label for="cbox2">其他收件人資料</label>
-                                        </p>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="input_info inside_input">
-                                                <p class="input_title">姓名</p>
-                                                <input class="user_input" type="text">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="input_info inside_input">
-                                                <p class="input_title">手機</p>
-                                                <input class="user_input" type="text">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="input_info d-md-flex">
-                                        <div class="address">
-                                            <p>地址</p>
-                                            <select id="city" placeholder="請選擇縣市"></select>
-                                            <select id="dist" placeholder="請選擇鄉鎮區"></select>
-                                        </div>
-                                        <div>
-                                            <p>郵遞區號</p>
-                                            <input class="js-demeter-tw-zipcode-selector" data-city="#city" data-dist="#dist" placeholder="請輸入郵遞區號" value="220" style="height: 40px; border-radius: 5px; border: 1px solid" readonly="readonly">
-                                        </div>
-                                    </div>
-                                    <div class="input_info">
-                                        <p>請填寫詳細收件人地址：路/項/弄/號/樓</p>
-                                        <input class="user_input" type="text">
-                                    </div>
-                                    <div class="input_info">
-                                        <p>出貨備註</p>
-                                        <textarea name="" id="" rows="5" style="width: 100%; border-radius: 5px;"></textarea>
-                                    </div>
-                                    <p class="p_color_style">⚠️出貨日期依您訂購時間排單，逐一出貨，出貨前電話或LINE通知</p>
                                 </div>
                             </div>
-                        </div>
+                            <div class="input_info d-md-flex">
+                                <div class="address">
+                                    <p>地址</p>
+                                    <select id="city" placeholder="請選擇縣市"></select>
+                                    <select id="dist" placeholder="請選擇鄉鎮區"></select>
+                                </div>
+                                <div>
+                                    <p>郵遞區號</p>
+                                    <input class="js-demeter-tw-zipcode-selector" data-city="#city" data-dist="#dist" placeholder="請輸入郵遞區號" value="220" style="height: 40px; border-radius: 5px; border: 1px solid" readonly="readonly">
+                                </div>
+                            </div>
+                            <div class="input_info">
+                                <p>請填寫詳細收件人地址：路/項/弄/號/樓</p>
+                                <input class="user_input form-control" type="text" required>
+                                <span class="invalid-feedback">
+                                    輸入地址
+                                </span>
+                            </div>
+                            <div class="input_info">
+                                <p>出貨備註</p>
+                                <textarea name="" id="" rows="5" style="width: 100%; border-radius: 5px;"></textarea>
+                            </div>
+                            <p class="p_color_style">⚠️出貨日期依您訂購時間排單，逐一出貨，出貨前電話或LINE通知</p>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -238,9 +247,9 @@
         <section class="pay_way">
             <div class="container">
                 <div class="row justify-content-center">
-                    <p class="member_page_title text-center mb-5">付款方式</p>
+                    <p class="member_page_title text-center ">付款方式</p>
                     <div class="col-md-4">
-                        <div class="payment_box">
+                        <div class="payment_box mt-3">
                             <input type="radio" name="select" id="option-1" checked>
                             <label for="option-1" class="option option-1">
                                 <div class="dot"></div>
@@ -249,7 +258,7 @@
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="payment_box">
+                        <div class="payment_box mt-3">
                             <input type="radio" name="select" id="option-2">
                             <label for="option-2" class="option option-2">
                                 <div class="dot"></div>
