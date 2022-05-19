@@ -34,7 +34,8 @@ $(document).ready(function(){
     //  home slider
     $('._carsoul .owl-carousel').owlCarousel({
         loop: true,
-        items: 1
+        items: 1,
+        autoplay: 3000
     })
     // home news
     $('.news .owl-carousel').owlCarousel({

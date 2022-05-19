@@ -226,9 +226,16 @@ section{
     text-align: center;
     border: 1px solid #736357;
     opacity: 0.8;
+    transition: all 0.3s;
 }
 .shopping_car a{
     color: #736357;
+}
+.shopping_car:hover{
+    background-color: #FBB03B;
+}
+.shopping_car:hover a{
+    color: #F3F3F1;
 }
 @media screen and (max-width: 768px){
     .go_top.active{
