@@ -1,5 +1,5 @@
 $(document).ready(function(){
-
+    
     $(window).scroll(function(){
         scrolledPx = $(this).scrollTop();
         console.log(scrolledPx);
@@ -35,7 +35,7 @@ $(document).ready(function(){
     $('._carsoul .owl-carousel').owlCarousel({
         loop: true,
         items: 1,
-        autoplay: 3000
+        // autoplay: 3000
     })
     // home news
     $('.news .owl-carousel').owlCarousel({
@@ -49,7 +49,7 @@ $(document).ready(function(){
                 items:1
             },
             577:{
-                items:3
+                items:2
             },
             1000:{
                 items:4
@@ -137,30 +137,8 @@ $(document).ready(function(){
     });
 
     // shopping car page
-    // 按下全選
-    $('.checkall').change(function(){
-        $(".item-check,.checkall").prop("checked",$(this).prop("checked"));
-        if($(this).prop("checked")){
-            $(".cart-item").addClass("check-cart-item");
-        } else {
-            $(".cart-item").removeClass("check-cart-item");
-        }
-        flushSumPrice();
-    })
-    // 單選
-    $(".item-check").change(function(){
-        if($(".item-check:checked").length == $(".item-check").length){
-            $(".checkall").prop("checked",true);
-        } else {
-            $(".checkall").prop("checked",false);
-        }
-        if($(this).prop("checked")){
-            $(this).parents(".cart-item").addClass("check-cart-item");
-        } else {
-            $(this).parents(".cart-item").removeClass("check-cart-item");
-        }
-        flushSumPrice();
-    })
+    // 整理總計和總數量
+    flushSumPrice();
     // 點選商品後面的刪除
     $(".p-trash a").on('click',function(){
         //刪除當前商品
@@ -229,38 +207,35 @@ $(document).ready(function(){
         //總價錢
         var money = 0;
         //運費
-        var freight = 0;
+        var freight = 80;
+        //最大總金額
+        var maxprice = 2000;
         
         //遍歷數量
         $(".piece").each(function(i,ele){
-            //如果勾選上了
-            if($(this).parents(".cart-item").find(".item-check").prop("checked") == true){
-                //累加
-                count += parseInt($(ele).val());
-            }
+            //累加
+            count += parseInt($(ele).val());
         })
         //重新整理總數量
         $(".totalCount em").text(count);
         
         //遍歷價錢
         $(".p-small_price").each(function(i,ele){
-            //如果勾選上了
-            if($(this).parents(".cart-item").find(".item-check").prop("checked") == true){
-                //累加
-                money += parseInt($(ele).text().substr(1));
-            }
+            //累加
+            money += parseInt($(ele).text().substr(1));
         })
         //重新整理總價錢
         $(".totalPrice em").text("$" + money);
 
         //運費的判斷
-        if(money >= 2000 || money == 0 ){
-            $('.freight em').text("$" + freight );
-            $(".total em").text("$" + money);
-        } else {
-            freight = 80;
-            $('.freight em').text("$" + freight);
-            $(".total em").text("$" + (money + freight));
+        if(money >= maxprice){
+            freight = 0  
         }
+        // 顯示運費價錢
+        $('.freight em').text("$" + freight);
+
+        money += freight;
+
+        $(".total em").text("$" + money);
     }
 })
