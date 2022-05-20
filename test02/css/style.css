@@ -94,6 +94,131 @@ section{
     margin: 50px 0;
 }
 
+/* 分頁 */
+.gs_pagination{
+	width: 100%;
+	padding: 30px 0 10px 0;
+	clear: both;
+	text-align: center;
+	background: none;
+	box-shadow: none;
+	margin: 0;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.gs_pagination a{
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	width: 35px;
+	height: 35px;
+	margin: 0 0.8em;
+}
+
+.gs_pagination_icon{
+    width: 30px;
+    height: 30px;
+	/* border: 2px solid #dbdbdb; */
+    line-height: 30px;
+    text-align: center;
+	color: #7acdf4;
+	font-size: 10px;
+	border-radius: 50%;
+	transition: all 0.2s ease-in-out;
+	display: inline-block;
+    position: relative;
+	/* background: #dbdbdb; */
+}
+
+.left_arrow{
+	position: absolute;
+	/* top: 15px; */
+    bottom: 7px;
+	left: 8px;
+	width: 20px;
+    height: 2px;
+    background: #C7B299;
+    transform: rotate(40deg);
+    transition: all 0.4s ease-in-out;
+}
+
+.left_arrow:before{
+	position: absolute;
+	top: 0;
+	left: 0px;
+	width: 20px;
+    height: 2px;
+	transform: rotate(-90deg);
+	transform-origin: left;
+    background: #C7B299;
+	content: '';
+}
+
+.right_arrow{
+	position: absolute;
+	/* top: 15px; */
+    bottom: 7px;
+	right: 8px;
+	width: 20px;
+    height: 2px;
+    background: #C7B299;
+    transform: rotate(-40deg);
+    transition: all 0.4s ease-in-out;
+}
+
+.right_arrow:before{
+	position: absolute;
+	top: 0;
+	right: 0px;
+	width: 20px;
+    height: 2px;
+	transform: rotate(90deg);
+	transform-origin: right;
+    background: #C7B299;
+	content: '';
+}
+
+.gs_pagination_a{
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+	background: none;
+	color: #C7B299;
+	font-size: 14px;
+	border-radius: 50%;
+	transition: all 0.2s ease-in-out;
+	display: inline-block;
+    position: relative;
+}
+
+.gs_pagination strong{
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+	background: #C7B299;
+	color: #FFF;
+	font-size: 16px;
+	margin: 0 0.3em;
+	transition: all 0.2s ease-in-out;
+	display: inline-block;
+    position: relative;
+	border-radius: 50%;
+}
+
+.gs_pagination_a:hover, .gs_pagination strong:hover{
+	color: #fff;
+	background: #C7B299;
+}
+
+.gs_pagination_icon:hover{
+    /* border: 2px solid ; */
+	background: #dbdbdb;
+}
+
 /* 圖片比例 */
 .outter{
     width: 100%;
@@ -141,14 +266,15 @@ section{
 
 /* menu-toggle */
 .menu-toggle{
-    position: absolute;
+    /* position: absolute;
     top: 5px;
-    right: 5px;
+    right: 5px; */
 	width: 48px;
 	height: 48px;
 	/*border: 1px solid #fff;*/
 	float: right;
-	margin-top: 8px;
+	margin-top: auto;
+    margin-bottom: auto;
 	display: none;
 	z-index: 600;
 }
@@ -363,7 +489,9 @@ section{
     }
     .sm_user_shop{
         display: block;
-        margin: auto;
+        margin-top: auto;
+        margin-bottom: auto;
+        margin-left: auto;
     }
     .sm_user_shop a{
         margin: 3px;
@@ -947,6 +1075,10 @@ section{
 .center_btn{
     margin-bottom: 10px;
 }
+/* member center orderlist */
+.clickable-row{
+    cursor: pointer; 
+}
 /* member center orderdetail */
 .member_center_orderdetail .image{
     border-radius: 5px;
@@ -960,13 +1092,11 @@ section{
 .price_detail span{
     margin-left: 30px;
 }
-.show_pay p{
-    margin: 0 20px;
-}
 .show_pay span{
+    margin: 0 20px;
     font-weight: bold;
 }
-.show_pay p:last-child{
+.show_pay span:last-child{
     color: #F5C772;
 }
 .pay_way span,
@@ -996,6 +1126,44 @@ section{
 .pay_price .squarebtn{
     padding: 0 20px;
 }
+.count_input.piece{
+    width: 70px;
+}
+.p-small_price{
+    min-width: 65px;
+}
+.p-pic{
+    display: flex;
+    align-items: center;
+}
+@media screen and (max-width: 992px){
+    .p-pic{
+            display: block;
+        }
+}
+@media screen and (max-width: 576px){
+    .quantity-form{
+        display: flex;
+    }
+    .plus_minus_btn{
+        width: 28px;
+        height: 28px;
+    }
+    .count_input.piece{
+        width: 40px;
+        height: 28px;
+    }
+}
+.p-name{
+    min-width: 100px;
+}
+.p-trash a{
+    font-size: 28px;
+}
+.p-trash a:hover{
+    color: red;
+}
+
 /* footer */
 .bottom-logo{
     width: 150px;

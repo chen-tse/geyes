@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="fontawesome-free-6.1.1-web/css/all.min.css">
     <!-- Plugins -->
     <link rel="stylesheet" href="vendor/OwlCarousel2-2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="vendor/slick/slick-theme.css">
+    <link rel="stylesheet" href="vendor/slick/slick.css">
   </head>
   <body>
 
@@ -31,11 +33,16 @@
                 <div class="row">
                     <div class="top-nav">
                         <div class="top-logo">
-                            <img src="./test_img/logo1.png" alt="">
+                            <a href="index.html"><img src="./test_img/logo1.png" alt=""></a>
                             <div class="sm_user_shop">
                                 <a href="member.html"><i class="fa-solid fa-user"></i>會員</a>
                                 <a href="#"><i class="fa-solid fa-cart-shopping"></i>購物車</a>
                             </div>
+                            <a href="#!" class="menu-toggle">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </a>
                         </div>
                         <div class="nav">
                             <div class="col-md-8">
@@ -56,11 +63,6 @@
                             </div>
                         </div>
                     </div>
-                    <a href="#!" class="menu-toggle">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </a>
                 </div>
             </div>
         </div>
@@ -85,38 +87,83 @@
                     <table class="table align-middle text-center">
                         <thead>
                             <tr>
-                                <th scope="col">項次</th>
+                                <th scope="col"><input type="checkbox" name="" id="" class="checkall"> (全選)項次</th>
                                 <th scope="col">商品</th>
-                                <th scope="col"></th>
                                 <th scope="col">價格/數量</th>
                                 <th scope="col">小計</th>
                                 <th scope="col">移除</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>
+                            <tr class="cart-item">
+                                <th scope="row"><input type="checkbox" name="" id="" class="item-check"> 1</th>
+                                <td class="p-pic">
                                     <div class="outter">
                                         <div class="image-container ratio-1-1">
                                             <div class="image"></div>
                                         </div>
                                     </div>
+                                    <div class="p-name">紅豆粉</div>
                                 </td>
-                                <td>紅豆粉</td>
-                                <td><p>$<span class="product_count">170</span>/盒</p>
-                                    <button class="plus_minus_btn decrease" disabled="disabled"><i class="fa-solid fa-minus"></i></button>
-                                    <input class="count_input piece text-center" type="text" value="1" onkeyup="value=value.replace(/^(0+)|[^\d]+/g,'')">
-                                    <button class="plus_minus_btn increase"><i class="fa-solid fa-plus"></i></button></td>
-                                <td><p>$<span class="small_price">170</span></p></td>
-                                <td><a href=""><i class="fa-solid fa-trash-can"></i></a></td>
+                                <td class="p-count">
+                                    <div class="p-price">$170/盒</div>
+                                    <div class="quantity-form">
+                                        <button class="plus_minus_btn decrease"><i class="fa-solid fa-minus"></i></button>
+                                        <input class="count_input piece text-center" type="text" value="1" onkeyup="value=value.replace(/^(0+)|[^\d]+/g,'')">
+                                        <button class="plus_minus_btn increase"><i class="fa-solid fa-plus"></i></button>
+                                    </div>
+                                </td>
+                                <td class="p-small_price">$170</td>
+                                <td class="p-trash"><a href="javascript:;"><i class="fa-solid fa-trash-can"></i></a></td>
+                            </tr>
+                            <tr class="cart-item">
+                                <th scope="row"><input type="checkbox" name="" id="" class="item-check"> 1</th>
+                                <td class="p-pic">
+                                    <div class="outter">
+                                        <div class="image-container ratio-1-1">
+                                            <div class="image"></div>
+                                        </div>
+                                    </div>
+                                    <div class="p-name">紅豆粉</div>
+                                </td>
+                                <td class="p-count">
+                                    <div class="p-price">$170/盒</div>
+                                    <div class="quantity-form">
+                                        <button class="plus_minus_btn decrease"><i class="fa-solid fa-minus"></i></button>
+                                        <input class="count_input piece text-center" type="text" value="1" onkeyup="value=value.replace(/^(0+)|[^\d]+/g,'')">
+                                        <button class="plus_minus_btn increase"><i class="fa-solid fa-plus"></i></button>
+                                    </div>
+                                </td>
+                                <td class="p-small_price">$170</td>
+                                <td class="p-trash"><a href="javascript:;"><i class="fa-solid fa-trash-can"></i></a></td>
+                            </tr>
+                            <tr class="cart-item">
+                                <th scope="row"><input type="checkbox" name="" id="" class="item-check"> 1</th>
+                                <td class="p-pic">
+                                    <div class="outter">
+                                        <div class="image-container ratio-1-1">
+                                            <div class="image"></div>
+                                        </div>
+                                    </div>
+                                    <div class="p-name">紅豆粉</div>
+                                </td>
+                                <td class="p-count">
+                                    <div class="p-price">$170/盒</div>
+                                    <div class="quantity-form">
+                                        <button class="plus_minus_btn decrease"><i class="fa-solid fa-minus"></i></button>
+                                        <input class="count_input piece text-center" type="text" value="1" onkeyup="value=value.replace(/^(0+)|[^\d]+/g,'')">
+                                        <button class="plus_minus_btn increase"><i class="fa-solid fa-plus"></i></button>
+                                    </div>
+                                </td>
+                                <td class="p-small_price">$170</td>
+                                <td class="p-trash"><a href="javascript:;"><i class="fa-solid fa-trash-can"></i></a></td>
                             </tr>
                         </tbody>
                     </table>
                     <div class="price_detail text-end">
-                        <p id="totalCount" style="display: inline;">共1件</p><span id="totalPrice">$170</span>
-                        <p>運送<span id="freight">$80</span></p>
-                        <p>總計<span id="total">$250</span></p>
+                        <div class="totalCount" id="totalCount" style="display: inline;">共<em>0</em>件</div><span class="totalPrice" id="totalPrice"><em>$0</em></span>
+                        <div>運送<span class="freight" id="freight"><em>$0</em></span></div>
+                        <div>總計<span class="total" id="total"><em>$0</em></span></div>
                     </div>
                 </div>
             </div>
@@ -282,18 +329,18 @@
                 <div class="row">
                     <p class="member_page_title text-center">支付總金額</p>
                     <div class="show_pay d-flex justify-content-center mt-3">
-                        <p>商品總計 <span>$340</span></p>
-                        <p>運送總計 <span>$80</span></p>
-                        <p>總計 <span>$420</span></p>
+                        <span class="totalPrice" id="totalPrice">商品總計 <em>$0</em></span>
+                        <span class="freight" id="freight">運費總計 <em>$0</em></span>
+                        <span class="total" id="total">總計 <em>$0</em></span>
                     </div>
                 </div>
             </div>
             <div class="container">
                 <div class="row justify-content-center">
-                    <div class="col-3 d-flex mt-5">
+                    <div class="col-md-3 col-4 d-flex mt-5">
                        <a href="" class="squarebtn w-100">繼續購物</a> 
                     </div>
-                    <div class="col-3 d-flex mt-5">
+                    <div class="col-md-3 col-4 d-flex mt-5">
                         <a href="" class="squarebtn w-100">確認訂購</a> 
                      </div>
                 </div>
@@ -357,7 +404,7 @@
     <!-- Plugins -->
     <script src="vendor/OwlCarousel2-2.3.4/owl.carousel.min.js"></script>
     <script src="https://demeter.5fpro.com/tw/zipcode-selector.js"></script>
-
+    <script src="vendor/slick/slick.min.js"></script>
     <script src="js/all.js"></script>
   </body>
 </html>

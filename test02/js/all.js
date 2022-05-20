@@ -115,61 +115,152 @@ $(document).ready(function(){
         if (!mystr.test(this.value)) this.setCustomValidity("E-mail格式錯誤!");
     })
 
+    // mall in
+    $('.slider-for').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        fade: true,
+        asNavFor: '.slider-nav'
+    });
+    $('.slider-nav').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        asNavFor: '.slider-for',
+        centerMode: true,
+        focusOnSelect: true
+    });
+
+    // orderlist
+    $(".clickable-row").click(function() {
+        window.location = $(this).data("href");
+    });
+
     // shopping car page
+    // 按下全選
+    $('.checkall').change(function(){
+        $(".item-check,.checkall").prop("checked",$(this).prop("checked"));
+        if($(this).prop("checked")){
+            $(".cart-item").addClass("check-cart-item");
+        } else {
+            $(".cart-item").removeClass("check-cart-item");
+        }
+        flushSumPrice();
+    })
+    // 單選
+    $(".item-check").change(function(){
+        if($(".item-check:checked").length == $(".item-check").length){
+            $(".checkall").prop("checked",true);
+        } else {
+            $(".checkall").prop("checked",false);
+        }
+        if($(this).prop("checked")){
+            $(this).parents(".cart-item").addClass("check-cart-item");
+        } else {
+            $(this).parents(".cart-item").removeClass("check-cart-item");
+        }
+        flushSumPrice();
+    })
+    // 點選商品後面的刪除
+    $(".p-trash a").on('click',function(){
+        //刪除當前商品
+        $(this).parents(".cart-item").remove();
+        flushSumPrice();
+    })
+    // 增減商品，修改價格
+    // 點選加號時
     $('.increase').on('click',function(){
-        var num = $('.piece').val();
-        console.log(num);
-        $('.decrease').prop('disabled', false);
+        //獲得輸入框的數量
+        var num = $(this).siblings('.piece').val();
+        //加一
         num++;
-        flushSum(num);
+        that = this;
+        flushSum(that,num);
+        flushSumPrice();
     })
+    // 點選減號時
     $('.decrease').on('click',function(){
-        var num = $('.piece').val();
-        if(num <= 1){
-            this.prop('disabled', true);
+        //獲得輸入框的數量
+        var num = $(this).siblings(".piece").val();
+        console.log(num);
+        //如果數量大於一
+        if(num > 1){
+            //減一
+            num--;
         }
-        num--;
-        flushSum(num);
+        that = this;
+        flushSum(that,num);
+        flushSumPrice();
     })
 
+    // 使用者修改輸入框
     $(".piece").change(function(){
-		//獲得輸入框的數量
-		var num = $(this).val();
-		//判斷是否輸入有誤
-		if(num == ""){
-			alert("輸入有誤");
-			num = 1;
-			$(this).val(1);
-		}
-		//重新整理小計
-		flushSum(num);
-	})
-    
-	function flushSum(num){
-		//重新整理商品數量
-		$(".piece").val(num);
-		//獲得商品的價格
-		var price = $(".product_count").text();
-		//轉型
-		price = parseFloat(price);
+        //獲得輸入框的數量
+        var num = $(this).val();
+        //判斷是否輸入有誤
+        if(num == ""){
+            alert("輸入有誤");
+            num = 1;
+            $(this).val(1);
+        }
+        that = this;
+        flushSum(that,num);
+        flushSumPrice();
+    })
 
-        var freight = $('#freight').text();
-        freight = parseFloat(freight.substr(1));
-		//獲得商品小計
-		sum = num * price;
-        if( sum > 2000 ){
-            $('#freight').text("$" + 0 )
-            freight = 0;
-            $('#total').text("$" + (sum + freight));
-        }
-        else{
+    // 重新整理小計
+    function flushSum(that,num){
+        //重新整理商品數量
+        $(that).siblings(".piece").val(num);
+        //獲得商品的價格
+        var price = $(that).parents(".quantity-form").siblings(".p-price").text();
+        //擷取數字部分並轉型
+        price = parseInt(price.substr(1 ,price.length - 2));
+        //獲得商品小計
+        sum = num * price;
+        //重新整理商品小計
+        $(that).parents(".p-count").siblings(".p-small_price").text("$" + sum);
+    }
+
+    //重新整理總計和總數量
+    function flushSumPrice(){
+        //總件數
+        var count = 0;
+        //總價錢
+        var money = 0;
+        //運費
+        var freight = 0;
+        
+        //遍歷數量
+        $(".piece").each(function(i,ele){
+            //如果勾選上了
+            if($(this).parents(".cart-item").find(".item-check").prop("checked") == true){
+                //累加
+                count += parseInt($(ele).val());
+            }
+        })
+        //重新整理總數量
+        $(".totalCount em").text(count);
+        
+        //遍歷價錢
+        $(".p-small_price").each(function(i,ele){
+            //如果勾選上了
+            if($(this).parents(".cart-item").find(".item-check").prop("checked") == true){
+                //累加
+                money += parseInt($(ele).text().substr(1));
+            }
+        })
+        //重新整理總價錢
+        $(".totalPrice em").text("$" + money);
+
+        //運費的判斷
+        if(money >= 2000 || money == 0 ){
+            $('.freight em').text("$" + freight );
+            $(".total em").text("$" + money);
+        } else {
             freight = 80;
-            $('#freight').text("$" + freight )
+            $('.freight em').text("$" + freight);
+            $(".total em").text("$" + (money + freight));
         }
-		//重新整理商品數量價錢
-		$('.small_price').text(sum);
-        $('#totalPrice').text("$" + sum)
-        $("#totalCount").text("共" + num + "件");
-        $('#total').text("$" + (sum + freight));
-	}
+    }
 })
