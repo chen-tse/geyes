@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="fontawesome-free-6.1.1-web/css/all.min.css">
     <!-- Plugins -->
     <link rel="stylesheet" href="vendor/OwlCarousel2-2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="vendor/slick/slick-theme.css">
+    <link rel="stylesheet" href="vendor/slick/slick.css">
   </head>
   <body>
 
@@ -20,7 +22,7 @@
     </div>
     <!-- shopping car -->
     <div class="shopping_car">
-        <a href=""><i class="fa-solid fa-cart-shopping"></i></a>
+        <a href="shopping_car.html"><i class="fa-solid fa-cart-shopping"></i></a>
     </div>
 
     <!-- Start header -->
@@ -31,18 +33,23 @@
                 <div class="row">
                     <div class="top-nav">
                         <div class="top-logo">
-                            <img src="./test_img/logo1.png" alt="">
+                            <a href="index.html"><img src="./test_img/logo1.png" alt=""></a>
                             <div class="sm_user_shop">
                                 <a href="member.html"><i class="fa-solid fa-user"></i>會員</a>
-                                <a href="#"><i class="fa-solid fa-cart-shopping"></i>購物車</a>
+                                <a href="shopping_car.html"><i class="fa-solid fa-cart-shopping"></i>購物車</a>
                             </div>
+                            <a href="#!" class="menu-toggle">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </a>
                         </div>
                         <div class="nav">
                             <div class="col-md-8">
                                 <ul class="nav-left">
                                     <li><a href="index.html">首頁</a></li>
                                     <li><a href="about_us.html">關於我們</a></li>
-                                    <li><a class="active" href="#">最新消息</a></li>
+                                    <li><a class="active" href="news.html">最新消息</a></li>
                                     <li><a href="shopping_mall.html">購物商城</a></li>
                                     <li><a href="cooperate.html">合作品牌</a></li>
                                     <li><a href="contact_us.html">聯絡我們</a></li>
@@ -51,16 +58,11 @@
                             <div class="col-md-4">
                                 <ul class="nav-right">
                                     <li><a href="member.html"><i class="fa-solid fa-user"></i> 登入/加入會員</a></li>
-                                    <li><a href="#"><i class="fa-solid fa-cart-shopping"></i> 我的購物車(0)</a></li>
+                                    <li><a href="shopping_car.html"><i class="fa-solid fa-cart-shopping"></i> 我的購物車(0)</a></li>
                                 </ul>
                             </div>
                         </div>
                     </div>
-                    <a href="#!" class="menu-toggle">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </a>
                 </div>
             </div>
         </div>
@@ -88,12 +90,12 @@
                         </div>
                     </div>
                     <div class="col-md-7">
-                        <div class="news_title new_in_title">
+                        <div class="news_title new_in_title mt-5 mt-md-0">
                             <h5>最新消息標題</h5>
                             <p>2022.01.24</p>
                         </div>
                         <div class="news_short">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus quidem quaerat necessitatibus eos. Voluptatum fuga aliquid eum possimus labore, aperiam deleniti cum blanditiis ex odio ad aspernatur sint. Fugit, placeat?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis, enim, quae quia asperiores tempore et aliquid natus temporibus dolor neque eos deserunt, cumque nihil corrupti fuga fugit molestiae magnam omnis.</p>
+                            <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus quidem quaerat necessitatibus eos. Voluptatum fuga aliquid eum possimus labore, aperiam deleniti cum blanditiis ex odio ad aspernatur sint. Fugit, placeat?Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
                         </div>
                     </div>
                 </div>
@@ -109,6 +111,11 @@
                             </p>
                         </div>
                     </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-3 d-flex justify-content-center">
+                    <a href="news.html" class="squarebtn w-100">回上頁</a> 
                 </div>
             </div>
         </section>
@@ -169,7 +176,7 @@
     <script src="js/jquery-3.6.0.min.js"></script>
     <!-- Plugins -->
     <script src="vendor/OwlCarousel2-2.3.4/owl.carousel.min.js"></script>
-
+    <script src="vendor/slick/slick.min.js"></script>
     <script src="js/all.js"></script>
   </body>
 </html>

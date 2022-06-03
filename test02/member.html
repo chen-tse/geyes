@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="fontawesome-free-6.1.1-web/css/all.min.css">
     <!-- Plugins -->
     <link rel="stylesheet" href="vendor/OwlCarousel2-2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="vendor/slick/slick-theme.css">
+    <link rel="stylesheet" href="vendor/slick/slick.css">
   </head>
   <body>
 
@@ -20,7 +22,7 @@
     </div>
     <!-- shopping car -->
     <div class="shopping_car">
-        <a href=""><i class="fa-solid fa-cart-shopping"></i></a>
+        <a href="shopping_car.html"><i class="fa-solid fa-cart-shopping"></i></a>
     </div>
 
     <!-- Start header -->
@@ -31,11 +33,16 @@
                 <div class="row">
                     <div class="top-nav">
                         <div class="top-logo">
-                            <img src="./test_img/logo1.png" alt="">
+                            <a href="index.html"><img src="./test_img/logo1.png" alt=""></a>
                             <div class="sm_user_shop">
                                 <a href="member.html"><i class="fa-solid fa-user"></i>會員</a>
-                                <a href="#"><i class="fa-solid fa-cart-shopping"></i>購物車</a>
+                                <a href="shopping_car.html"><i class="fa-solid fa-cart-shopping"></i>購物車</a>
                             </div>
+                            <a href="#!" class="menu-toggle">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </a>
                         </div>
                         <div class="nav">
                             <div class="col-md-8">
@@ -51,16 +58,11 @@
                             <div class="col-md-4">
                                 <ul class="nav-right">
                                     <li><a class="active" href="#"><i class="fa-solid fa-user"></i> 登入/加入會員</a></li>
-                                    <li><a href="#"><i class="fa-solid fa-cart-shopping"></i> 我的購物車(0)</a></li>
+                                    <li><a href="shopping_car.html"><i class="fa-solid fa-cart-shopping"></i> 我的購物車(0)</a></li>
                                 </ul>
                             </div>
                         </div>
                     </div>
-                    <a href="#!" class="menu-toggle">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </a>
                 </div>
             </div>
         </div>
@@ -85,18 +87,19 @@
                             <p class="member_card_title text-center">會員登入</p>
                             <div class="member_card_input">
                                 <button class="homebtn linebtn"><i class="fa-brands fa-line"></i> 快速登入</button>
-                                <div class="input_info">
-                                    <p>Email</p>
-                                    <input class="user_input" type="text">
-                                </div>
-                                <div class="input_info">
-                                    <p>密碼</p>
-                                    <input class="user_input" type="text">
-                                </div>
-                                <div>
-                                    <a href="">忘記密碼</a>
-                                </div>
-                                <button class="homebtn">會員登入</button>
+                                <form class="row g-3 ">
+                                    <div class="col-12">
+                                        <label for="contact_Email" class="form-label">E-mail</label>
+                                        <input type="email" class="form-control" id="contact_Email" required>
+                                    </div>
+                                    <div class="col-12">
+                                      <label for="contact_PWD" class="form-label">密碼</label>
+                                      <input type="password" class="form-control" id="contact_PWD" required>
+                                    </div>
+                                    <div class="col-12">
+                                        <button class="homebtn">會員登入</button>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -106,22 +109,41 @@
                             <div class="member_card_input">
                                 <button class="homebtn linebtn"><i class="fa-brands fa-line"></i> 快速註冊</button>
                                 <p class="member_card_title text-center" style="margin-top: 10px;">帳號註冊</p>
-                                <div class="input_info">
-                                    <p>Email(註冊帳號) *</p>
-                                    <div class="row">
-                                        <div class="col-9">
-                                            <input class="user_input" type="text" >
-                                        </div>
-                                        <div class="col-3">
-                                            <button class="homebtn checkbtn">認證</button>
+                                <form class="row g-3 ">
+                                    <div class="input_info">
+                                        <div class="row">
+                                            <div class="col-9">
+                                                <label for="contact_Email" class="form-label">E-mail</label>
+                                                <input type="email" class="form-control" id="contact_Email" required>
+                                            </div>
+                                            <div class="col-3 ps-0">
+                                                <button class="homebtn checkbtn">認證</button>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="input_info">
-                                    <p style="display: inline;">驗證碼:</p>
-                                    <input class="user_input" type="text" style="width: 50%;">
-                                </div>
-                                <div class="input_info">
+                                    <div class="input_info">
+                                        <p style="display: inline;">驗證碼:</p>
+                                        <input class="user_input" type="text" style="width: 50%;" required>
+                                    </div>
+                                    <div class="input_info">
+                                        <label for="member_Name" class="form-label">姓名 *</label>
+                                        <input type="text" class="form-control" id="member_Name" required>
+                                    </div>
+                                    <div class="col-12">
+                                      <label for="member_PWD" class="form-label">密碼</label>
+                                      <input type="password" class="form-control" id="member_PWD" required>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="check_PWD" class="form-label">確認密碼</label>
+                                        <input type="password" class="form-control" id="check_PWD" required>
+                                      </div>
+                                    <div class="col-12">
+                                        <button class="homebtn addbtn">加入會員</button>
+                                    </div>
+                                </form>
+                                
+                                
+                                <!-- <div class="input_info">
                                     <p>姓名 *</p>
                                     <input class="user_input" type="text">
                                 </div>
@@ -132,8 +154,8 @@
                                 <div class="input_info">
                                     <p>確認密碼 *</p>
                                     <input class="user_input" type="text">
-                                </div>
-                                <button class="homebtn addbtn">加入會員</button>
+                                </div> -->
+                                
                             </div>
                         </div>
                     </div>
@@ -197,7 +219,7 @@
     <script src="js/jquery-3.6.0.min.js"></script>
     <!-- Plugins -->
     <script src="vendor/OwlCarousel2-2.3.4/owl.carousel.min.js"></script>
-
+    <script src="vendor/slick/slick.min.js"></script>
     <script src="js/all.js"></script>
   </body>
 </html>
