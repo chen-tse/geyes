@@ -6,9 +6,395 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="fontawesome-free-6.1.1-web/css/all.min.css">
+    <link rel="stylesheet" href="vendor/slick/slick-theme.css">
+    <link rel="stylesheet" href="vendor/slick/slick.css">
+
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script src="vendor/slick/slick.min.js"></script>
+    <script src="vendor/slick/slick-theme.css"></script>
 </head>
 <body>
+    <!-- tap to top -->
+    <a class="go_top text-center" href="">
+        <i class="fa-solid fa-angle-up"></i>
+        <div class="go_top_txt">TOP</div>
+    </a>
     
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script>
+        $('.go_top').click(function(){
+            $('html,body').animate({ scrollTop: 0 }, 'fast');   /* 返回到最頂上 */
+            return false;
+        })
+    </script>
+    
+
+    <!-- Start header -->
+    <header class="header">
+        <!-- navbar -->
+        <div class="top-area">
+            
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="top-nav">
+                        <div class="top_line"></div>
+                        <div class="top_logo">
+                            <img class="logo_img" src="image/iran_logo.png" alt="">
+                            <img class="logo_text" src="image/logo_name.png" alt="">
+                        </div>
+                        <div class="top_navbar">
+                            <ul class="navbar">
+                                <li class="nav_item">
+                                    <a href="" class="nav_link">首頁</a>
+                                </li>
+                                <li class="nav_item">
+                                    <a href="" class="nav_link">關於</a>
+                                </li>
+                                <li class="nav_item">
+                                    <a href="" class="nav_link">服務項目</a>
+                                </li>
+                                <li class="nav_item">
+                                    <a href="" class="nav_link">商品內容</a>
+                                </li>
+                                <li class="nav_item">
+                                    <a href="" class="nav_link">實際案例</a>
+                                </li>
+                                <li class="nav_item">
+                                    <a href="" class="nav_link">常見問題</a>
+                                </li>
+                                <li class="nav_item">
+                                    <a href="" class="nav_link">銷售據點</a>
+                                </li>
+                                <li class="nav_item">
+                                    <a href="" class="nav_link">聯絡我們</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="top_social">
+                            <div class="social_item">
+                                <a href="" class="social_link"><i class="fa-brands fa-instagram-square"></i></a>
+                            </div>
+                            <div class="social_item">
+                                <a href="" class="social_link"><i class="fa-brands fa-facebook-square"></i></a>
+                            </div>
+                            <div class="social_item">
+                                <a href="" class="social_link"><i class="fa-brands fa-line"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+           
+    </header>
+    <!-- End header -->
+
+    <script>
+        $(window).scroll(function(){
+        scrolledPx = $(this).scrollTop();
+        console.log(scrolledPx);
+        if(scrolledPx >= 1){
+            $('.top-nav').addClass('active');
+            $('.go_top').addClass('active');
+        }
+        else{
+            $('.top-nav').removeClass('active');
+            $('.go_top').removeClass('active');
+        }
+    })
+    </script>
+
+    <div class="main">
+        <section>
+            <div class="_slick">
+                <div class="main_slider_item">
+                    <h2>波斯茶鄉</h2>
+                    <h3>Persian Tea Village</h3>
+                    <a href="" class="main_btn">READ MORE</a>
+                </div>
+                <div class="main_slider_item">
+                    <h2>波斯茶鄉</h2>
+                    <h3>Persian Tea Village</h3>
+                    <a href="" class="main_btn">READ MORE</a>
+                </div>
+                <div class="main_slider_item">
+                    <h2>波斯茶鄉</h2>
+                    <h3>Persian Tea Village</h3>
+                    <a href="" class="main_btn">READ MORE</a>
+                </div>
+            </div>
+        </section>
+        <script>
+            $(document).ready(function(){
+                $('._slick').slick({
+                    arrows: false,
+                    dots: true
+                });
+            });
+        </script>
+
+        <section class="pic_txt">
+            <div class="container-fluid">
+                <div class="row flex">
+                    <div class="section_item d-flex p-0">
+                        <div class="col-md-6">
+                            <div class="item_pic" style="background-image: url('./image/img1.png');">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="item_txt">
+                                <div class="item_title">
+                                    <div class="item_icon d-flex">
+                                        <img src="image/title_icon.png" alt="">
+                                        <h2>關於我們</h2>
+                                    </div>
+                                </div>
+                                <div class="item_info">
+                                    <p>波斯紅茶～縁起身在台灣,心繫故鄉味的洋女婿於2009年從伊朗引進。有86年製茶歷史的自家茶廠及海拔3000公尺的茶園，純淨的水源、氣侯乾燥無蟲害，極冷酷熱洗禮下，遵循自然農法僅一年一期。</p>
+                                </div>
+                                <div class="item_btn text-end">
+                                    <a href="" class="main_btn" >READ MORE</a>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="section_item d-flex">
+                        <div class="col-md-6">
+                            <div class="item_txt">
+                                <div class="item_title">
+                                    <div class="item_icon d-flex">
+                                        <img src="image/title_icon.png" alt="">
+                                        <h2>實際案例</h2>
+                                    </div>
+                                </div>
+                                <div class="item_info">
+                                    <p>波斯紅茶～縁起身在台灣,心繫故鄉味的洋女婿於2009年從伊朗引進。有86年製茶歷史的自家茶廠及海拔3000公尺的茶園，純淨的水源、氣侯乾燥無蟲害，極冷酷熱洗禮下，遵循自然農法僅一年一期。</p>
+                                </div>
+                                <div class="item_btn text-end">
+                                    <a href="" class="main_btn" >READ MORE</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="item_pic" style="background-image: url('./image/img2.png');">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="product_service">
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="service_img" style="background-image: url('./image/img3.png');"></div>
+                    <div class="home_logo_title">
+                        <div class="">
+                            <img src="image/service_logo.png" class="service_logo" alt="">
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="show_product">
+            <div class="main_title text-center">
+                <h3>商品服務</h3>
+                <div class="">
+                    <img src="image/title_icon.png" class="service_icon" alt="">
+                </div>
+            </div>
+            
+            <div class="service_slick">
+                <div class="product_item">
+                    <div class="product_pic">
+                        <div class="outter">
+                            <div class="image-container ratio-1-1">
+                                <div class="image"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product_name text-center">
+                        <p>方巾抱枕</p>
+                    </div>
+                </div>
+                <div class="product_item">
+                    <div class="product_pic">
+                        <div class="outter">
+                            <div class="image-container ratio-1-1">
+                                <div class="image"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product_name text-center">
+                        <p>方巾抱枕</p>
+                    </div>
+                </div>
+                <div class="product_item">
+                    <div class="product_pic">
+                        <div class="outter">
+                            <div class="image-container ratio-1-1">
+                                <div class="image"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product_name text-center">
+                        <p>方巾抱枕</p>
+                    </div>
+                </div>
+                <div class="product_item">
+                    <div class="product_pic">
+                        <div class="outter">
+                            <div class="image-container ratio-1-1">
+                                <div class="image"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product_name text-center">
+                        <p>方巾抱枕</p>
+                    </div>
+                </div>
+                <div class="product_item">
+                    <div class="product_pic">
+                        <div class="outter">
+                            <div class="image-container ratio-1-1">
+                                <div class="image"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product_name text-center">
+                        <p>方巾抱枕</p>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="text-center">
+                        <a href="" class="main_btn">READ MORE</a>  
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script>
+            $(document).ready(function(){
+                $('.service_slick').slick({
+                    slidesToShow: 4,
+                });
+            });
+        </script>
+
+        <section class="question">
+            <div class="container">
+                <div class="row">
+                    <div class="main_title text-center">
+                        <h3>商品服務</h3>
+                        <div class="">
+                            <img src="image/question_icon.png" class="service_icon" alt="">
+                        </div>
+                    </div>             
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="accordion_box">
+                            <div class="accordion_title"><span>Q</span>波斯地毯如何選擇? </div>
+                            <div class="accordion_content"><span>A</span>只要選擇艾芬波斯茶館，絕對是最好的選擇!</div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="accordion_box">
+                            <div class="accordion_title"><span>Q</span>波斯地毯如何選擇?</div>
+                            <div class="accordion_content"><span>A</span>只要選擇艾芬波斯茶館，絕對是最好的選擇!</div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="accordion_box">
+                            <div class="accordion_title"><span>Q</span>波斯地毯如何選擇?</div>
+                            <div class="accordion_content"><span>A</span>只要選擇艾芬波斯茶館，絕對是最好的選擇!</div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="accordion_box">
+                            <div class="accordion_title"><span>Q</span>波斯地毯如何選擇?</div>
+                            <div class="accordion_content"><span>A</span>只要選擇艾芬波斯茶館，絕對是最好的選擇!</div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="accordion_box">
+                            <div class="accordion_title"><span>Q</span>波斯地毯如何選擇?</div>
+                            <div class="accordion_content"><span>A</span>只要選擇艾芬波斯茶館，絕對是最好的選擇!</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <a href="" class="main_btn">READ MORE</a>
+                </div>
+            </div>
+        </section>
+        <script>
+            $(document).ready(function(){
+                $('body').on('click',function(event){
+                    if($(event.target).hasClass('accordion_title')){
+                        $(event.target).toggleClass('active');
+                        $(event.target).siblings('.accordion_content').stop().slideToggle(300);
+                    }
+                })
+            })
+        </script>
+    </div>
+
+    
+
+    <!-- Start footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row py-4">
+                <div class="col-md-4">
+                    <div class="footer_left">
+                        <div class="footer_icon">
+                            <img src="image/iran_logo.png" alt="">
+                        </div>
+                        <div class="footer_name_social">
+                            <img src="image/logo_name.png" alt="">
+                            <div class="footer_social_group">
+                                <a href=""><i class="fa-brands fa-youtube-square"></i></a>
+                                <a href=""><i class="fa-brands fa-instagram-square"></i></a>
+                                <a href=""><i class="fa-brands fa-facebook-square"></i></a>
+                                <a href=""><i class="fa-brands fa-line"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="footer_middle">
+                        <div class="">台中新光館</div>
+                        <div class="">407台中市西屯區台灣大道三段301號號7樓
+                            <br>
+                            (台中新光三越中港店 7樓)
+                        </div>
+                        <div class="">TEL：04 777 6527</div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="footer_right">
+                        <div class="">鹿港館</div>
+                        <div class="">505彰化縣鹿港鎮文開路32巷1號(鹿港老街)</div>
+                        <div class="">TEL：04 777 6527</div>
+                    </div>
+                </div>
+                
+            </div>
+            
+        </div>
+        <div class="copyright text-center"> 
+            <div class="copyright_text">Copyright © 艾芬波斯茶館, All rights reserved.網站設計：橘野數位設計</div>
+        </div>
+    </footer>
+    <!-- End footer -->
+    
+    
 </body>
-</html>
+</html> 
